@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: gateway-server
+server:
+  port: 8765
+
+zuul:
+  routes:
+    product:
+      path: /products/**
+      serviceId: product
+      stripPrefix: false
+    display:
+      path: /displays/**
+      serviceId: display
+      stripPrefix: false
+    auth:
+      path: /auth/**
+      serviceId: auth
+      stripPrefix: false

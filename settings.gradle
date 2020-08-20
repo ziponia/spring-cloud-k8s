@@ -1,0 +1,8 @@
+rootProject.name = 'demo'
+include 'gateway'
+include 'cluster'
+include 'auth'
+include 'product'
+include 'display'
+include 'core'
+
