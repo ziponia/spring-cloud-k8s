@@ -1,5 +1,10 @@
 spring:
   application:
     name: auth
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 server:
   port: 9001

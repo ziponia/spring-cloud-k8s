@@ -1,5 +1,15 @@
 server:
   port: 8081
 spring:
+  boot:
+    admin:
+      client:
+        url: http://localhost:9002
   application:
     name: product
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

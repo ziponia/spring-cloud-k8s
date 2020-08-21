@@ -19,12 +19,13 @@ repositories {
 
 ext {
     set('springCloudVersion', "Hoxton.SR7")
+    set('appVersion', '0.0.1')
 }
 
 allprojects {
 
     group = 'com.example'
-    version = '0.0.1-SNAPSHOT'
+    version = "${appVersion}"
     sourceCompatibility = '1.8'
 
     apply plugin: 'org.springframework.boot'
@@ -47,7 +48,9 @@ allprojects {
 }
 
 subprojects {
+    dependencies {
 
+    }
 }
 
 dependencies {
@@ -67,24 +70,37 @@ project(':core') {
 }
 
 project(':gateway') {
-
+    dependencies {
+        compile project(':core')
+    }
 }
 
 project(':cluster') {
-
     dependencies {
-        implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
+        compile project(':core')
     }
 }
 
 project(':auth') {
-
+    dependencies {
+        compile project(':core')
+    }
 }
 
 project(':display') {
-
+    dependencies {
+        compile project(':core')
+    }
 }
 
 project(':product') {
+    dependencies {
+        compile project(':core')
+    }
+}
 
+project(':dashboard') {
+    dependencies {
+        compile project(':core')
+    }
 }

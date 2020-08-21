@@ -3,7 +3,16 @@ server:
 spring:
   application:
     name: cluster-server
+  boot:
+    admin:
+      client:
+        url: http://localhost:9002
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 eureka:
   server:
     response-cache-update-interval-ms: 1000 # Eureka Server's Response Cache. Default 30,000ms
